@@ -19,7 +19,8 @@ latex/
 .coverage
 bin/
 credentials.json
-
+dummy.txt
+token.pickle
 
 
 
