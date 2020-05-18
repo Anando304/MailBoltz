@@ -26,3 +26,8 @@ activate the environment: (using conda: activate test-scikit)
 
 # Installation
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+
+
+GMAIL:
+Gmail Settings -> Forwarding and POP / IMAP -> IMAP Acess to Enable IMAP
+https://myaccount.google.com/lesssecureapps <---enable

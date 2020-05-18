@@ -1,3 +1,9 @@
+'''
+Program: GMail API tests
+Author: Anando Zaman
+Description: Experimenting with Gmail API for email extraction/modification
+'''
+
 from __future__ import print_function
 import pickle
 import os.path
