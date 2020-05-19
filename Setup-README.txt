@@ -22,12 +22,18 @@ the conda folder created C:Users/name/Anaconda3/envs/envName
 
 
 ******************Python Libraries*************
-activate the environment: (using conda: activate test-scikit)
+activate the environment: (using conda: activate MailBoltz)
 
 # Installation
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+pip install lxml
+pip install beautifulsoup4
+pip install nltk
 
 
 GMAIL:
 Gmail Settings -> Forwarding and POP / IMAP -> IMAP Acess to Enable IMAP
 https://myaccount.google.com/lesssecureapps <---enable
+
+If you want to learn how the IMAP library works, check out:
+https://www.tutorialspoint.com/python_network_programming/python_imap.htm
