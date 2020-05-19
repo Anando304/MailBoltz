@@ -1,5 +1,5 @@
 # MailBoltz - Overview
-- A program designed to summarize your daily emails in one place!
+- A program designed to summarize your daily emails(Inbox) in one place!
 - Saves time from checking/reading every email manually.
 - Get all the important details summarized in a few sentences.
 - Uses Extraction based summarization along with IMAP to extract emails
