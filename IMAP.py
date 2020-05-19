@@ -1,12 +1,23 @@
-import imaplib
-import pprint
-import email as EMAIL
-from email.header import decode_header
-import os
+## @file IMAP.py
+ # @author Anando Zaman
+ # @brief Extracts email data
+ # @date May 16, 2020
+ # @details Extract and text-processing of email data
+
 '''IMAP allows the client program to manipulate the e-mail
    message on the server without downloading them on the
-   local computer.'''
+   local computer.
 
+   We could also extract emails using the GMail API shown in the Gmail_test.py file
+   '''
+
+import imaplib
+import email as EMAIL
+from email.header import decode_header
+
+''' @brief class used for creating IMAP objects
+ *  @details Extracts email data from the Inbox folder of an email client(ie; GMail)
+ '''
 class IMAP:
 
     def __init__(self,Host,User,Pass):
@@ -28,6 +39,7 @@ class IMAP:
     def append_email_data(self, x):
         self.email_data.append(x)
 
+    # Authentication flow
     def authenticate(self):
         imap_host = self.Host
         imap_user = self.User
@@ -43,6 +55,7 @@ class IMAP:
     # Fetches the N-top emails
     def fetch_data(self, N):
         imap = self.get_imap()
+        # Change to 'SPAM' if you want to get emails from SPAM folder
         status, messages = imap.select("INBOX")
         # response status check
         if (status != 'OK'):
@@ -81,8 +94,8 @@ class IMAP:
                     # Append to data list
                     data_list.append(subject)
                     data_list.append(from_)
-                    print("Subject:", subject)
-                    print("From:", from_)
+                    #print("Subject:", subject)
+                    #print("From:", from_)
 
                     # if the email message is multipart(composed of sections for each Content-Type)
                     if msg.is_multipart():
@@ -99,7 +112,7 @@ class IMAP:
                             if content_type == "text/plain" and ("attachment" not in content_disposition):
                                 # append text/plain emails and skip attachments
                                 data_list.append(body)
-                                print(body)
+                                #print(body)
 
 
                     # if NOT multipart
@@ -111,24 +124,10 @@ class IMAP:
                         if content_type == "text/plain":
                             # save only text email parts
                             data_list.append(body)
-                            print(body)
+                            #print(body)
 
             # Insert data_list containing data for an email, into the list of all email_data
             self.append_email_data(data_list)
 
         imap.close()
         imap.logout()
-
-
-# Read credentials file
-file = open("credentials.txt")
-user = file.readline()
-pass_ = file.readline()
-file.close()
-
-# email object
-host = 'imap.gmail.com'
-email = IMAP(host,user,pass_)
-email.authenticate()
-email.fetch_data(2)
-print(email.email_data)
