@@ -1,0 +1,7 @@
+.rounded_corner_60 {
+  border-radius: 25px;
+  background: #000000;
+  padding: 4px; 
+  width: 200px;
+  height: 150px;  
+}

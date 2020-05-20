@@ -52,7 +52,6 @@ class IMAP:
         imap.login(imap_user, imap_pass)
         self.set_imap(imap)
 
-
     # Fetches the N-top emails
     def fetch_data(self, N):
         imap = self.get_imap()
