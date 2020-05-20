@@ -12,6 +12,7 @@
 
 *.pyc
 *.class
+idea/
 
 html/
 latex/

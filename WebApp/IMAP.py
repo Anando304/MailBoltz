@@ -53,10 +53,10 @@ class IMAP:
         self.set_imap(imap)
 
     # Fetches the N-top emails
-    def fetch_data(self, N):
+    def fetch_data(self, N, folder):
         imap = self.get_imap()
         # Change to 'SPAM' if you want to get emails from SPAM folder
-        status, messages = imap.select("INBOX")
+        status, messages = imap.select(folder)
         # response status check
         if (status != 'OK'):
             print("Could not retrieve data")

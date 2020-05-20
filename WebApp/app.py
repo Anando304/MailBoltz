@@ -35,7 +35,9 @@ def home():
             # Read input credentials
             user = request.form["email"]
             pass_ = request.form["password"]
-            output = controller(user,pass_)
+            num_emails = int(request.form["num_emails"])
+            folder = request.form["folder"]
+            output = controller(user,pass_,num_emails,folder)
 
             if output == "Success":
                 session.pop('logged_in',None) #lOGOUT of any existing session

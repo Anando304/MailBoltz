@@ -13,7 +13,7 @@
 from IMAP import IMAP
 from Text_Summarizer import summarizer
 
-def controller(user,pass_):
+def controller(user,pass_,N,folder):
     # email object
     host = 'imap.gmail.com'
     email = IMAP(host,user,pass_)
@@ -24,9 +24,14 @@ def controller(user,pass_):
         return "failed"
 
     '''Specify number of recent emails to fetch'''
-    fetch_emails = 5
-    # Fetch the emails
-    email.fetch_data(fetch_emails)
+    try:
+        fetch_emails = N
+        # Fetch the emails
+        email.fetch_data(fetch_emails, folder)
+    except:
+        print("Failed to fetch emails")
+        return "failed"
+
 
     '''FileWriter'''
     file = open("./templates/EmailSummary.html", "wb")
