@@ -36,7 +36,7 @@ def home():
             # Delete previous emailsummary if exists
             if os.path.exists("./templates/EmailSummary.html"):
                 os.remove("./templates/EmailSummary.html")
-                
+
             # Read input credentials
             user = request.form["email"]
             pass_ = request.form["password"]
@@ -52,6 +52,9 @@ def home():
 
         elif request.form['submit'] == 'view':
             return redirect(url_for('view'))
+
+        elif request.form['submit'] == 'instructions':
+            return redirect(url_for('instructions'))
 
     return render_template('index.html',error=output)
 
@@ -74,6 +77,18 @@ def view():
 
         session.pop('logged_in', None)  # Pops the user value from the session dictionary essentially logging them out, when they exit the screen
         return render_template('EmailSummary.html')
+
+
+# Instructions page
+@app.route('/instructions', methods=['GET','POST'])
+def instructions():
+
+    if request.method == 'POST':
+        if request.form['submit'] == 'home':
+            return redirect(url_for('home'))
+
+    if request.method == 'GET':
+        return render_template('instructions.html')
           
 if __name__ == "__main__":
     app.jinja_env.auto_reload = True
