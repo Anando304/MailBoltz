@@ -14,7 +14,7 @@ def default():
 def page_not_found(e):
     if request.method == 'POST':
         if request.form['LoginRedirect'] == 'Login Page': #Login Page is the value associated with the button once clicked sending POST request data
-           return redirect(url_for('home')) #Redirects to login page using login/home function.
+           return redirect(url_for('home')) #Redirects to home page using home function.
     return render_template('404.html')
 
 @app.errorhandler(500)
@@ -31,7 +31,12 @@ def home():
     if request.method == 'POST':
         #all buttons have the same name(submit), just diff value(ie: Submit,view,etc)
         if request.form['submit'] == 'Submit':
-            print(request.form)
+            #print(request.form)
+
+            # Delete previous emailsummary if exists
+            if os.path.exists("./templates/EmailSummary.html"):
+                os.remove("./templates/EmailSummary.html")
+                
             # Read input credentials
             user = request.form["email"]
             pass_ = request.form["password"]
@@ -51,7 +56,7 @@ def home():
     return render_template('index.html',error=output)
 
 
-@app.before_request #Use of request decorators to check if a session is active before moving onto an authenticated page
+@app.before_request
 def before_request():
     #g is a global variable representing the session
     g.logged_in = None
@@ -67,7 +72,7 @@ def view():
         if g.user == None:
             return redirect(url_for('home'))
 
-        session.pop('logged_in', None)  # Pops the user value from the session dictionary essentially logging them out
+        session.pop('logged_in', None)  # Pops the user value from the session dictionary essentially logging them out, when they exit the screen
         return render_template('EmailSummary.html')
           
 if __name__ == "__main__":

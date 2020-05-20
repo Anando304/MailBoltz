@@ -5,13 +5,9 @@
  # @details This is the main file that will be used to control the other files and run the program!
  # @details Uses Text_Summarizer.py & IMAP.py files
 
-
-# Note: Store your email credentials in a file called credentials.txt
-# The first line containing email address, second line containing password
-# This is needed for authentication in order to extract email data
-
 from IMAP import IMAP
 from Text_Summarizer import summarizer
+import os
 
 def controller(user,pass_,N,folder):
     # email object
@@ -34,6 +30,8 @@ def controller(user,pass_,N,folder):
 
 
     '''FileWriter'''
+    if os.path.exists("./templates/EmailSummary.html"):
+        os.remove("./templates/EmailSummary.html")
     file = open("./templates/EmailSummary.html", "wb")
 
     # Summarize these emails
