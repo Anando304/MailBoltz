@@ -54,16 +54,16 @@
 		  </div>
 		</form>
 		
+		
 		<!-- Transition to view page to display content -->
 		<form method="POST" action="/home">
 		{% if error == 'Success' %}
-			<div  class="text-center">
-				<h1 class="error text-success text-center" style="margin-top:30px"><strong>Status:</strong> <span style="color: green">{{ error }}</span></h1>
-				<button type="submit" class="btn btn-success" name = "submit" value = "view">View here</button>
-			</div>
+		<div  class="text-center">
+			<h1 class="error text-success text-center" style="margin-top:30px"><strong>Status:</strong> <span style="color: green">{{ error }}</span></h1>
+			<button type="submit" class="btn btn-success" name = "submit" value = "view">View here</button>
+		</div>
 		{% endif %}
 		</form>
-		
 		{% if error == 'failed' %}
 			<h1 class="error text-success text-center" style="margin-top:30px"><strong>Status:</strong> <span style="color: red">{{ error }}</span></h1>
 		{% endif %}
