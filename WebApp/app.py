@@ -6,14 +6,32 @@ import os
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
+@app.route('/', methods=['GET','POST'])
+def default():
+    return redirect(url_for('home'))
+
+@app.errorhandler(404) # For 404 errors
+def page_not_found(e):
+    if request.method == 'POST':
+        if request.form['LoginRedirect'] == 'Login Page': #Login Page is the value associated with the button once clicked sending POST request data
+           return redirect(url_for('home')) #Redirects to login page using login/home function.
+    return render_template('404.html')
+
+@app.errorhandler(500)
+def page_not_found500(e):
+    if request.method == 'POST':
+        if request.form['LoginRedirect'] == 'Login Page':
+           return redirect(url_for('home'))
+    return render_template('500.html')
+
 @app.route('/home', methods=['GET','POST'])
 def home():
     output = None
 
     if request.method == 'POST':
-        #all buttons have the same name(submit), just diff value
+        #all buttons have the same name(submit), just diff value(ie: Submit,view,etc)
         if request.form['submit'] == 'Submit':
-
+            print(request.form)
             # Read input credentials
             user = request.form["email"]
             pass_ = request.form["password"]
