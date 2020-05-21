@@ -1,8 +1,7 @@
-## @file main.py
+## @file controller.py
  # @author Anando Zaman
- # @brief Main Program that is used to generate summarized emails
+ # @brief Main Program that is used to control the generation of summarized emails
  # @date May 16, 2020
- # @details This is the main file that will be used to control the other files and run the program!
  # @details Uses Text_Summarizer.py & IMAP.py files
 
 from IMAP import IMAP
