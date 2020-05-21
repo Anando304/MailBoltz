@@ -4,7 +4,7 @@ from controller import controller
 import os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.secret_key = "AAAAAAAAaaaaaaaaaaaa"
 
 @app.route('/', methods=['GET','POST'])
 def default():

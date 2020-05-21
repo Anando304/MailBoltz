@@ -35,35 +35,37 @@
 		<h1 style=" text-align: center; color:white; margin-top:20px" width = "450" height = "350"> Summary Email </h1>	
 		
 		<!-- Dynamic floating card style layout of the JSON data -->
-		<ul>
-		{% for item in summary %}
-			<!-- margin: auto; width: 80% or 80px or 80rem; min-width: 80px -->
-			<div class="hvr-grow" style="background:rgb(211,211,211); margin: 80px; margin-top: 80px auto; margin-bottom: 80px auto; border: 1px solid #ccc;
-			border-radius: 5px;
-			padding: 4px; 
-			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); width: 100rem auto;">
-			  
-			  <div class="blog-header">
-			  
-				<div class="blog-author--no-cover" style="margin-left:20px">
-					<h3>{{item.sender}}</h3>
-				</div>
-			  </div>
+		{% if summary %}
+			<ul>
+			{% for item in summary %}
+				<!-- margin: auto; width: 80% or 80px or 80rem; min-width: 80px -->
+				<div class="hvr-grow" style="background:rgb(211,211,211); margin: 80px; margin-top: 80px auto; margin-bottom: 80px auto; border: 1px solid #ccc;
+				border-radius: 5px;
+				padding: 4px; 
+				box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); width: 100rem auto;">
+				  
+				  <div class="blog-header">
+				  
+					<div class="blog-author--no-cover" style="margin-left:20px">
+						<h3>{{item.sender}}</h3>
+					</div>
+				  </div>
 
-			  <div class="blog-body">
-				<div class="blog-title">
-				  <h1><a href="#">{{item.title}}</a></h1>
-				</div>
-				
-				<div class="blog-summary">
-				  <p>{{item.summary}}</p>
-				</div>
-				
-			  </div>
+				  <div class="blog-body">
+					<div class="blog-title">
+					  <h1><a href="#">{{item.title}}</a></h1>
+					</div>
+					
+					<div class="blog-summary">
+					  <p>{{item.summary}}</p>
+					</div>
+					
+				  </div>
 
-			</div>
-		{% endfor %}
-		</ul>
+				</div>
+			{% endfor %}
+			</ul>
+		{% endif %}
 		
 		
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
