@@ -1,0 +1,35 @@
+-Login/Register a Heroku account
+-Create a new app
+
+Python:
+pip freeze > requirements.txt
+cat Python-3.7.6 > runtime.txt
+
+Heroku Init:
+heroku login
+git init
+heroku git:remote -a mailboltz
+
+For flask applications, create a Procfile:
+More info here: https://devcenter.heroku.com/articles/getting-started-with-python#define-a-procfile
+-> A procfile is a text file in the root
+  directory of your application, to explicitly
+  declare what command should be executed to start your app
+
+web: gunicorn app:app --> Procfile
+
+Heroku Deploy:
+git add .
+git commit -am "make it better"
+git push heroku master
+
+For more instructions, check here: https://devcenter.heroku.com/articles/getting-started-with-python#deploy-the-app
+
+logs:
+heroku logs --tail
+
+To shut down your Heroku app scale the web processes to 0:
+heroku ps:scale web=0
+
+open heroku app:
+heroku open

@@ -1,0 +1,59 @@
+// Card/blog style comments
+
+// Card container
+//-------------------------
+.cardcontainer {
+	background-color:rgb(211,211,211); 
+	margin: 80px; 
+	margin-top: 80px auto;
+	margin-bottom: 80px auto; 
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 4px; 
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	width: 100rem auto;
+	min-width: 480px
+}
+
+// Card header
+//-------------------------
+.blog-author,
+.blog-author--no-cover {
+  margin: 0 auto;
+  padding-top: .125rem;
+  width: 80%;
+}
+.blog-author h3::before,
+.blog-author--no-cover h3::before {
+  background: url("../imgs/logo.png");
+  background-size: cover;
+  border-radius: 60%;
+  content: " ";
+  display: inline-block;
+  height: 42px;
+  margin-right: .75rem;
+  position: relative;
+  top: 8px;
+  width: 42px;
+}
+.blog-author h3 {
+  color: #fff;
+  font-weight: 100;
+}
+.blog-author--no-cover h3 {
+  color: lighten(#333, 40%);
+  font-weight: 100;
+}
+
+// Card body
+//-------------------------
+.blog-body {
+  margin: 0 auto;
+  width: 80%;
+}
+.blog-title h1 a {
+  color: #333;
+  font-weight: 100;
+}
+
+}
