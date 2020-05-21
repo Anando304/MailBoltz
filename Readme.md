@@ -5,8 +5,8 @@
 - Saves time from having to read entire sets of emails.
 - Get all the important details summarized in a few sentences.
 - Uses Extraction based summarization along with IMAP to extract emails
-- An SMTP client on a scheduled server can also be established if the user wants the summarized
- emails to be emailed to them at a set period of time.
+- An SMTP client on a scheduled server can be established if the user wants the summarized
+ emails to be emailed to them at a set time intervals.
 
 # Ways to use:
 - ***2 options available***
@@ -26,10 +26,10 @@ pip install beautifulsoup4
 pip install nltk
 ```
 
-***PyCharm***
-If you're using PyCharm, then open File-> Settings -> Project Interpreter -> and set VirtualEnv directory
-If you used conda instead of virtual env, navigate to Conda Environment --> existing environment, and locate
-the conda folder created C:Users/name/Anaconda3/envs/envName
+***PyCharm Config***
+- If you are using PyCharm, open File-> Settings -> Project Interpreter -> and set VirtualEnv directory.
+- If you used conda instead of virtual env, navigate to Conda Environment --> existing environment, and locate
+- the conda folder created C:Users/name/Anaconda3/envs/{Your Environment name without parenthesis}/python.exe
 
 # Console - Authentication
 - Replace the lines in the credentials.txt file with that of yours.
