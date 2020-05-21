@@ -1,4 +1,5 @@
-<img src="./WebApp 2.0/static/imgs/logo.png" width="200" height="200">
+<img src="./WebApp 2.0/static/imgs/logo.png" width="232" height="200">
+
 # MailBoltz - Overview
 - An application designed to summarize your daily emails in one place!
 - Saves time from having to read entire sets of emails.
