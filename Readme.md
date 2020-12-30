@@ -10,7 +10,8 @@
 
 # Ways to use:
 - ***2 options available***
-- Use the **webapp** available <a href="https://mailboltz.herokuapp.com/home"> here </a>
+- Use the **webapp** available <a href="https://mailboltz.herokuapp.com/home"> here </a> 
+- Note: There may be a 10-15 second delay to open the link above if has not recently been used.
 - Use directly via Python **console/terminal**
 
 # Console - Installation Instructions
